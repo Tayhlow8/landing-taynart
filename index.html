@@ -354,13 +354,13 @@ section{position:relative;z-index:2}
   grid-template-rows:1fr;
   grid-template-columns:1fr;
 }
-.cda-panel{
+.ba-panel{
   grid-area:frame;
   display:flex;flex-direction:column;
   transition:opacity .35s ease;
 }
 /* estado inicial via HTML inline style; transição via CSS */
-.cda-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.ba-img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 
 /* Before/After toggle */
 .port-ba{
@@ -379,6 +379,7 @@ section{position:relative;z-index:2}
 
 /* Grid secundário */
 .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-6)}
+.portfolio-grid .port-card:only-child{grid-column:1/-1}
 .port-card{
   border:1px solid var(--border);background:#fff;
   overflow:hidden;display:flex;flex-direction:column;
@@ -795,73 +796,66 @@ footer{
         <div class="port-featured-frames">
 
         <!-- DEPOIS (visível por padrão) -->
-        <div class="cda-panel" id="cda-after" style="opacity:1;pointer-events:auto">
-          <img class="cda-img" src="assets/caixa-dagua-depois.jpg" alt="Site atual da Caixa d'Água Revestimentos, redesenhado" loading="lazy">
+        <div class="ba-panel" id="cda-after" style="opacity:1;pointer-events:auto">
+          <img class="ba-img" src="assets/caixa-dagua-depois.jpg" alt="Site atual da Caixa d'Água Revestimentos, redesenhado" loading="lazy">
         </div>
 
         <!-- ANTES: LP simples 2021 -->
-        <div class="cda-panel" id="cda-before" style="opacity:0;pointer-events:none">
-          <img class="cda-img" src="assets/caixa-dagua-antes.jpg" alt="Site antigo da Caixa d'Água Revestimentos, antes do redesign" loading="lazy">
+        <div class="ba-panel" id="cda-before" style="opacity:0;pointer-events:none">
+          <img class="ba-img" src="assets/caixa-dagua-antes.jpg" alt="Site antigo da Caixa d'Água Revestimentos, antes do redesign" loading="lazy">
         </div>
 
         </div><!-- /port-featured-frames -->
 
         <!-- Toggle buttons -->
         <div class="port-ba" role="group" aria-label="Alternar visualização antes/depois">
-          <button class="port-ba-btn" id="btn-before" onclick="cdaToggle('before')">Antes</button>
-          <button class="port-ba-btn active" id="btn-after" onclick="cdaToggle('after')">Depois</button>
+          <button class="port-ba-btn" id="btn-cda-before" onclick="baToggle('cda','before')">Antes</button>
+          <button class="port-ba-btn active" id="btn-cda-after" onclick="baToggle('cda','after')">Depois</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── DESTAQUE: NV8 ──────────────────────────────────── -->
+    <article class="port-featured reveal" id="port-nv8">
+      <div class="port-featured-body">
+        <div>
+          <span class="port-sector">Tecnologia · Reposicionamento de Marca</span>
+        </div>
+        <h3 class="port-featured-name">NV8</h3>
+        <p class="port-desc">O site antigo parecia de uma empresa pequena — mesmo a NV8 sendo referência em tecnologia para grandes clientes. Recriamos a identidade visual do zero: hoje, no primeiro segundo de acesso, quem visita já sente que está falando com uma empresa de ponta. Isso muda a conversa antes mesmo da primeira reunião comercial.</p>
+        <div class="port-metric">
+          <span class="port-metric-val">1 semana</span>
+          <span>para lançar o novo site, com 6 produtos ganhando página própria</span>
+        </div>
+      </div>
+
+      <!-- Visual: before/after -->
+      <div class="port-featured-visual">
+
+        <div class="port-featured-frames">
+
+        <!-- DEPOIS (visível por padrão) -->
+        <div class="ba-panel" id="nv8-after" style="opacity:1;pointer-events:auto">
+          <img class="ba-img" src="assets/nv8-depois.jpg" alt="Site atual da NV8, com identidade visual própria e sofisticada" loading="lazy">
+        </div>
+
+        <!-- ANTES: site institucional genérico -->
+        <div class="ba-panel" id="nv8-before" style="opacity:0;pointer-events:none">
+          <img class="ba-img" src="assets/nv8-antes.jpg" alt="Site antigo da NV8, com visual institucional genérico" loading="lazy">
+        </div>
+
+        </div><!-- /port-featured-frames -->
+
+        <!-- Toggle buttons -->
+        <div class="port-ba" role="group" aria-label="Alternar visualização antes/depois">
+          <button class="port-ba-btn" id="btn-nv8-before" onclick="baToggle('nv8','before')">Antes</button>
+          <button class="port-ba-btn active" id="btn-nv8-after" onclick="baToggle('nv8','after')">Depois</button>
         </div>
       </div>
     </article>
 
     <!-- ── Grid secundário ─────────────────────────────── -->
     <div class="portfolio-grid">
-      <article class="port-card reveal">
-        <div class="port-img">
-          <div class="port-img-inner" style="background:#0A0E18">
-            <!-- NV8 dark mockup -->
-            <div style="height:100%;display:flex;flex-direction:column;gap:0">
-              <div style="height:24px;background:#0D1220;border-bottom:1px solid rgba(0,255,212,.08);display:flex;align-items:center;padding:0 10px;gap:6px;flex-shrink:0">
-                <div style="font-size:0;width:14px;height:14px;background:rgba(0,255,212,.15);border-radius:1px"></div>
-                <div style="flex:1;display:flex;gap:8px">
-                  <div style="height:3px;width:24px;background:rgba(255,255,255,.12);border-radius:1px"></div>
-                  <div style="height:3px;width:24px;background:rgba(255,255,255,.12);border-radius:1px"></div>
-                  <div style="height:3px;width:24px;background:rgba(255,255,255,.12);border-radius:1px"></div>
-                </div>
-                <div style="height:14px;padding:0 8px;background:#00FFD4;border-radius:1px;display:flex;align-items:center">
-                  <div style="height:3px;width:32px;background:rgba(0,0,0,.6);border-radius:1px"></div>
-                </div>
-              </div>
-              <div style="flex:1;padding:14px 16px;display:flex;gap:12px;align-items:center">
-                <div style="flex:1;display:flex;flex-direction:column;gap:6px">
-                  <div style="height:4px;width:50px;background:rgba(0,255,212,.4);border-radius:1px"></div>
-                  <div style="height:8px;width:80%;background:rgba(255,255,255,.85);border-radius:1px"></div>
-                  <div style="height:8px;width:65%;background:rgba(255,255,255,.85);border-radius:1px"></div>
-                  <div style="height:6px;width:55%;background:#00FFD4;border-radius:1px;margin-top:2px"></div>
-                  <div style="height:4px;width:85%;background:rgba(255,255,255,.2);border-radius:1px;margin-top:4px"></div>
-                  <div style="height:4px;width:70%;background:rgba(255,255,255,.2);border-radius:1px"></div>
-                  <div style="height:18px;width:80px;background:#00FFD4;border-radius:2px;margin-top:6px"></div>
-                </div>
-                <div style="width:35%;aspect-ratio:4/3;background:#0D1A30;border:1px solid rgba(0,255,212,.15);padding:6px;display:flex;flex-direction:column;gap:3px">
-                  <div style="height:3px;background:rgba(0,255,212,.3);border-radius:1px"></div>
-                  <div style="height:3px;background:rgba(0,255,212,.15);border-radius:1px;width:70%"></div>
-                  <div style="flex:1;background:rgba(0,255,212,.04);margin-top:4px"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="port-body">
-          <span class="port-sector">Software Intelligence · Tech</span>
-          <h3 class="port-name">NV8</h3>
-          <p class="port-desc">Redesign completo que virou produto. De HTML estático e identidade genérica para Vue.js + design system próprio, 6 produtos com páginas dedicadas e UI interativa — entregue em 1 semana.</p>
-          <div class="port-metric">
-            <span class="port-metric-val">1 semana</span>
-            <span>entrega · 6 produtos lançados</span>
-          </div>
-        </div>
-      </article>
-
       <article class="port-card reveal reveal-d2">
         <div class="port-img">
           <div class="port-img-inner" style="background:linear-gradient(135deg,#FDF8EE 0%,#F5ECCE 100%)">
@@ -1094,12 +1088,12 @@ footer{
 
 
 <script>
-/* Before/After toggle — Caixa d'Água */
-function cdaToggle(mode) {
-  var before = document.getElementById('cda-before');
-  var after  = document.getElementById('cda-after');
-  var btnB   = document.getElementById('btn-before');
-  var btnA   = document.getElementById('btn-after');
+/* Before/After toggle — cases de portfólio */
+function baToggle(prefix, mode) {
+  var before = document.getElementById(prefix + '-before');
+  var after  = document.getElementById(prefix + '-after');
+  var btnB   = document.getElementById('btn-' + prefix + '-before');
+  var btnA   = document.getElementById('btn-' + prefix + '-after');
   if (mode === 'before') {
     before.style.opacity = '1';
     before.style.pointerEvents = 'auto';
