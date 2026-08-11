@@ -343,27 +343,36 @@ section{position:relative;z-index:2}
   gap:var(--sp-5);justify-content:center;
 }
 .port-featured-visual{
-  position:relative;overflow:hidden;background:#0B1A2E;
+  display:flex;flex-direction:column;overflow:hidden;background:#0B1A2E;
+  min-height:280px;
 }
-/* Painéis do toggle — direto no container */
+/* Painéis do toggle — sobrepostos via CSS grid na mesma célula */
+.port-featured-frames{
+  flex:1;min-height:0;
+  display:grid;
+  grid-template-areas:"frame";
+  grid-template-rows:1fr;
+  grid-template-columns:1fr;
+}
 .cda-panel{
-  position:absolute;inset:0;
+  grid-area:frame;
   display:flex;flex-direction:column;
   transition:opacity .35s ease;
 }
-.cda-panel--visible{opacity:1;pointer-events:auto;z-index:2}
-.cda-panel--hidden{opacity:0;pointer-events:none;z-index:1}
+/* estado inicial via HTML inline style; transição via CSS */
 
 /* Before/After toggle */
 .port-ba{
-  position:absolute;bottom:var(--sp-4);left:50%;transform:translateX(-50%);
-  display:flex;background:rgba(11,26,46,.8);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.1);padding:3px;gap:2px;z-index:4;
+  flex-shrink:0;
+  display:flex;justify-content:center;
+  background:rgba(11,26,46,.85);backdrop-filter:blur(8px);
+  border-top:1px solid rgba(255,255,255,.1);padding:5px;gap:2px;
 }
 .port-ba-btn{
   font-size:.48rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);padding:5px 12px;cursor:pointer;
+  color:rgba(255,255,255,.5);padding:5px 14px;cursor:pointer;
   transition:color .2s, background .2s;background:none;border:none;font-family:inherit;
+  border-radius:1px;
 }
 .port-ba-btn.active{background:var(--accent);color:#fff}
 
@@ -779,11 +788,13 @@ footer{
         <a href="https://www.caixadaguarevestimentos.com.br/" target="_blank" rel="noopener" class="port-link">Ver site ao vivo →</a>
       </div>
 
-      <!-- Visual: before/after — direto no container, sem wrapper intermediário -->
+      <!-- Visual: before/after -->
       <div class="port-featured-visual">
 
+        <div class="port-featured-frames">
+
         <!-- DEPOIS (visível por padrão) -->
-        <div class="cda-panel cda-panel--visible" id="cda-after">
+        <div class="cda-panel" id="cda-after" style="opacity:1;pointer-events:auto">
           <div style="height:40px;background:#0D2040;border-bottom:1px solid rgba(0,168,232,.15);display:flex;align-items:center;padding:0 16px;gap:10px;flex-shrink:0">
             <div style="width:22px;height:22px;background:rgba(0,168,232,.3);border-radius:2px"></div>
             <div style="flex:1;display:flex;gap:14px">
@@ -815,7 +826,7 @@ footer{
         </div>
 
         <!-- ANTES: LP simples 2021 -->
-        <div class="cda-panel cda-panel--hidden" id="cda-before">
+        <div class="cda-panel" id="cda-before" style="opacity:0;pointer-events:none">
           <div style="height:36px;background:#fff;border-bottom:1px solid #e0e0e0;display:flex;align-items:center;padding:0 12px;gap:8px;flex-shrink:0">
             <div style="width:20px;height:20px;background:#1a7abf;border-radius:2px;opacity:.7"></div>
             <div style="height:8px;width:50px;background:#1a7abf;border-radius:1px;opacity:.6"></div>
@@ -857,6 +868,8 @@ footer{
             <div style="height:20px;width:72px;background:rgba(255,255,255,.9);border-radius:2px"></div>
           </div>
         </div>
+
+        </div><!-- /port-featured-frames -->
 
         <!-- Toggle buttons -->
         <div class="port-ba" role="group" aria-label="Alternar visualização antes/depois">
@@ -1148,18 +1161,22 @@ footer{
 <script>
 /* Before/After toggle — Caixa d'Água */
 function cdaToggle(mode) {
-  const before = document.getElementById('cda-before');
-  const after  = document.getElementById('cda-after');
-  const btnB   = document.getElementById('btn-before');
-  const btnA   = document.getElementById('btn-after');
+  var before = document.getElementById('cda-before');
+  var after  = document.getElementById('cda-after');
+  var btnB   = document.getElementById('btn-before');
+  var btnA   = document.getElementById('btn-after');
   if (mode === 'before') {
-    before.className = 'cda-panel cda-panel--visible';
-    after.className  = 'cda-panel cda-panel--hidden';
+    before.style.opacity = '1';
+    before.style.pointerEvents = 'auto';
+    after.style.opacity  = '0';
+    after.style.pointerEvents  = 'none';
     btnB.classList.add('active');
     btnA.classList.remove('active');
   } else {
-    after.className  = 'cda-panel cda-panel--visible';
-    before.className = 'cda-panel cda-panel--hidden';
+    after.style.opacity  = '1';
+    after.style.pointerEvents  = 'auto';
+    before.style.opacity = '0';
+    before.style.pointerEvents = 'none';
     btnA.classList.add('active');
     btnB.classList.remove('active');
   }
