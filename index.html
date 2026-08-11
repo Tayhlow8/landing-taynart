@@ -452,6 +452,21 @@ section{position:relative;z-index:2}
 }
 
 /* ═══════════════════════════════════════════════════════════
+   SOBRE
+   ═══════════════════════════════════════════════════════════ */
+#sobre{padding:0 var(--sp-6) var(--sp-24)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--sp-12);align-items:center}
+.about-media{border:1px solid var(--border);overflow:hidden}
+.about-media img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.about-text{display:flex;flex-direction:column;gap:var(--sp-4);margin:var(--sp-6) 0}
+.about-text p{font-size:.875rem;font-weight:300;line-height:1.8;color:var(--fg-muted)}
+
+@media(max-width:780px){
+  .about-grid{grid-template-columns:1fr;gap:var(--sp-8)}
+  .about-media img{aspect-ratio:4/3}
+}
+
+/* ═══════════════════════════════════════════════════════════
    DEPOIMENTOS
    ═══════════════════════════════════════════════════════════ */
 #depoimentos{padding:0 var(--sp-6) var(--sp-24)}
@@ -642,6 +657,7 @@ footer{
   <div class="nav-links">
     <a href="#como-funciona" class="nav-link">Como funciona</a>
     <a href="#portfolio" class="nav-link">Portfólio</a>
+    <a href="#sobre" class="nav-link">Sobre</a>
     <a href="#planos" class="nav-link">Planos</a>
     <a href="#faq" class="nav-link">FAQ</a>
   </div>
@@ -892,6 +908,29 @@ footer{
           </div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOBRE ══════════════════════════════════════════════════ -->
+<section id="sobre" aria-labelledby="sobre-heading">
+  <div class="pf-rule"></div>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <img src="assets/tayna-sobre.jpg" alt="Retrato de Tayná Schultz, fundadora da Taynart" loading="lazy">
+      </div>
+      <div class="about-body">
+        <div class="t-eyebrow reveal"><span class="pf-dot"></span>Quem sou eu</div>
+        <h2 id="sobre-heading" class="t-headline reveal reveal-d1">Uma designer calibre <em>L'Oréal</em>, cuidando do seu negócio.</h2>
+        <div class="about-text reveal reveal-d2">
+          <p>Antes de fundar a Taynart, passei anos numa agência de marketing cuidando dos e-commerces de marcas do grupo L'Oréal — DTC, B2B e B2C, entre elas SkinCeuticals, Lancôme, Dermaclub, Segredos de Salão, Yves Saint Laurent e Prada.</p>
+          <p>Aprendi na prática, sob a régua de marcas globais, o que faz um site vender de verdade: estratégia antes de estética, copy que resolve objeção e um nível de detalhe que não pode falhar. Hoje aplico o mesmo padrão para negócios que, mesmo sem uma agência gigante por trás, merecem um site à altura.</p>
+          <p>Não sou uma agência sem rosto nem um site gerado por IA. Sou eu, de ponta a ponta — do primeiro briefing ao site no ar.</p>
+        </div>
+        <a href="https://taynart.com/projetos" target="_blank" rel="noopener" class="port-link reveal reveal-d3">Ver todos os meus projetos →</a>
+      </div>
     </div>
   </div>
 </section>
