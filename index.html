@@ -585,20 +585,35 @@ section{position:relative;z-index:2}
 .cta-btns{display:flex;flex-wrap:wrap;gap:var(--sp-4);justify-content:center}
 
 /* ═══════════════════════════════════════════════════════════
+   IMPORTÂNCIA DO SITE
+   ═══════════════════════════════════════════════════════════ */
+#importancia{padding:0 var(--sp-6) var(--sp-24)}
+.importance-highlight{
+  margin:var(--sp-10) auto 0;max-width:640px;
+  border:1px solid var(--accent-soft);background:var(--accent-subtle);
+  padding:var(--sp-6) var(--sp-8);text-align:center;
+}
+.importance-highlight p{font-size:.9rem;font-weight:300;line-height:1.7;color:var(--fg)}
+.importance-highlight strong{color:var(--accent);font-family:var(--font-display);font-weight:700}
+
+/* ═══════════════════════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════════════════════ */
 footer{
   padding:var(--sp-8) var(--sp-6);
   border-top:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;flex-direction:column;gap:var(--sp-6);
   position:relative;z-index:2;
 }
+.footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp-4)}
 .footer-logo{display:flex;align-items:center}
 .footer-logo img{height:26px;width:auto;display:block}
 .footer-copy{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted)}
 .footer-links{display:flex;gap:var(--sp-6)}
 .footer-link{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);transition:color .2s}
 .footer-link:hover{color:var(--fg)}
+.footer-tags{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-5);padding-top:var(--sp-6);border-top:1px solid var(--border)}
+.footer-tag{font-size:.6rem;color:var(--fg-muted);opacity:.65}
 
 /* ═══════════════════════════════════════════════════════════
    ANIMAÇÕES
@@ -663,7 +678,7 @@ footer{
     <a href="#planos" class="nav-link">Planos</a>
     <a href="#faq" class="nav-link">FAQ</a>
   </div>
-  <button class="pf-btn pf-btn--solid" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})" aria-label="Falar com a Taynart">
+  <button class="pf-btn pf-btn--solid" onclick="document.getElementById('planos').scrollIntoView({behavior:'smooth'})" aria-label="Ver planos">
     <span class="pf-ring"></span><span class="pf-veil"></span><span class="pf-core"></span>
     <span class="pf-btn-lbl">Quero meu site <span class="pf-arr">→</span></span>
   </button>
@@ -1092,6 +1107,22 @@ footer{
 </section>
 
 
+<!-- IMPORTÂNCIA DO SITE ═══════════════════════════════════ -->
+<section id="importancia" aria-labelledby="importancia-heading">
+  <div class="pf-rule"></div>
+  <div class="wrap">
+    <header class="sec-header sec-header--center">
+      <div class="t-eyebrow reveal" style="justify-content:center"><span class="pf-dot"></span>Por que agora</div>
+      <h2 id="importancia-heading" class="t-headline reveal reveal-d1" style="text-align:center">Quem não está online<br>não existe para o seu cliente.</h2>
+      <p class="t-body reveal reveal-d2" style="text-align:center;max-width:56ch">Antes de ligar ou visitar sua loja, seu cliente já pesquisou no Google. Hoje, ter um site — ou uma loja virtual — deixou de ser diferencial: é o mínimo para ser encontrado, gerar confiança e vender todos os dias, 24 horas, mesmo enquanto você dorme. Quem ainda não está online está perdendo venda todo dia para quem está.</p>
+    </header>
+    <div class="importance-highlight reveal reveal-d3">
+      <p>Cuidamos de toda a conexão pra você — domínio, hospedagem, pagamentos e integrações — tudo pronto e no ar em até <strong><span style="margin-right:.2em">1</span>semana.</strong></p>
+    </div>
+  </div>
+</section>
+
+
 <!-- CTA FINAL ═════════════════════════════════════════════ -->
 <section id="contato" aria-labelledby="contato-heading">
   <div class="pf-rule"></div>
@@ -1122,12 +1153,28 @@ footer{
 
 <!-- FOOTER ════════════════════════════════════════════════ -->
 <footer aria-label="Rodapé">
-  <div class="footer-logo"><img src="assets/logo-nav.png" alt="Taynart"/></div>
-  <span class="footer-copy">© 2025 Taynart · Todos os direitos reservados</span>
-  <nav class="footer-links" aria-label="Links do rodapé">
-    <a href="https://taynart.com" target="_blank" rel="noopener" class="footer-link">Portfolio</a>
-    <a href="https://linkedin.com/in/taynart" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
-  </nav>
+  <div class="footer-top">
+    <div class="footer-logo"><img src="assets/logo-nav.png" alt="Taynart"/></div>
+    <span class="footer-copy">© 2025 Taynart · Todos os direitos reservados</span>
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="https://taynart.com" target="_blank" rel="noopener" class="footer-link">Portfolio</a>
+      <a href="https://linkedin.com/in/taynart" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+    </nav>
+  </div>
+  <div class="footer-tags" aria-label="Serviços e especialidades">
+    <span class="footer-tag">#criaçãodesites</span>
+    <span class="footer-tag">#landingpage</span>
+    <span class="footer-tag">#sitequeconverte</span>
+    <span class="footer-tag">#designerdesites</span>
+    <span class="footer-tag">#redesigndesite</span>
+    <span class="footer-tag">#ecommerce</span>
+    <span class="footer-tag">#seoorganico</span>
+    <span class="footer-tag">#googlemeunegocio</span>
+    <span class="footer-tag">#identidadevisual</span>
+    <span class="footer-tag">#sitesparapequenosnegocios</span>
+    <span class="footer-tag">#freelancerdesigner</span>
+    <span class="footer-tag">#sitesresponsivos</span>
+  </div>
 </footer>
 
 
