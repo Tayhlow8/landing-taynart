@@ -469,6 +469,38 @@ section{position:relative;z-index:2}
 }
 
 /* ═══════════════════════════════════════════════════════════
+   OUTROS TRABALHOS (carrossel)
+   ═══════════════════════════════════════════════════════════ */
+#outros-trabalhos{padding:var(--sp-16) 0 var(--sp-24)}
+#outros-trabalhos .wrap{margin-bottom:var(--sp-10)}
+.marquee{position:relative;overflow:hidden;width:100%}
+.marquee::before,.marquee::after{
+  content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
+}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.marquee-track{
+  display:flex;align-items:center;gap:var(--sp-6);width:max-content;
+  animation:marquee-scroll 46s linear infinite;
+}
+.marquee:hover .marquee-track{animation-duration:160s}
+.marquee-img{
+  height:260px;width:auto;display:block;flex-shrink:0;
+  border:1px solid var(--border);background:#fff;
+}
+@keyframes marquee-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@media(max-width:780px){
+  .marquee-img{height:170px}
+  .marquee::before,.marquee::after{width:60px}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+}
+
+/* ═══════════════════════════════════════════════════════════
    DEPOIMENTOS
    ═══════════════════════════════════════════════════════════ */
 #depoimentos{padding:0 var(--sp-6) var(--sp-24)}
@@ -948,6 +980,50 @@ footer{
         </div>
         <a href="https://taynart.com/projetos" target="_blank" rel="noopener" class="port-link reveal reveal-d3">Ver todos os meus projetos →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- OUTROS TRABALHOS ══════════════════════════════════════ -->
+<section id="outros-trabalhos" aria-labelledby="outros-trabalhos-heading">
+  <div class="wrap">
+    <header class="sec-header sec-header--center">
+      <div class="t-eyebrow reveal" style="justify-content:center"><span class="pf-dot"></span>Mais trabalhos</div>
+      <h2 id="outros-trabalhos-heading" class="t-headline reveal reveal-d1" style="text-align:center">Um pouco mais do que <em>já criei.</em></h2>
+    </header>
+  </div>
+  <div class="marquee reveal reveal-d2" aria-label="Carrossel com outros projetos de design">
+    <div class="marquee-track">
+      <img class="marquee-img" src="assets/work-lancome.jpg" alt="Campanha de Dia das Mães para Lancôme" loading="lazy">
+      <img class="marquee-img" src="assets/work-mixes1.jpg" alt="Landing page da linha L'OR Cappuccino" loading="lazy">
+      <img class="marquee-img" src="assets/work-mixes3.jpg" alt="Landing page da linha L'OR Cappuccino, versão 2" loading="lazy">
+      <img class="marquee-img" src="assets/work-desktop-exp.jpg" alt="Site institucional NewCo, versão desktop" loading="lazy">
+      <img class="marquee-img" src="assets/work-mobile-exp.jpg" alt="Site institucional NewCo, versão mobile" loading="lazy">
+      <img class="marquee-img" src="assets/work-arf-mobile.jpg" alt="App mobile da ARF Realty" loading="lazy">
+      <img class="marquee-img" src="assets/work-dualipa.jpg" alt="Landing page de captação para Yves Saint Laurent" loading="lazy">
+      <img class="marquee-img" src="assets/work-ysl.jpg" alt="E-commerce e formulário promocional para Yves Saint Laurent" loading="lazy">
+      <img class="marquee-img" src="assets/work-arf-realstate.jpg" alt="Site da ARF Realty, imóveis de luxo em Miami" loading="lazy">
+      <img class="marquee-img" src="assets/work-dermaclub.jpg" alt="Checkout do e-commerce Dermaclub" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena1.jpg" alt="Landing page de energia renovável" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena2.jpg" alt="Site institucional de energia renovável" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena3.jpg" alt="Mockups mobile de site de energia renovável" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena6.jpg" alt="Páginas internas de site de energia renovável" loading="lazy">
+      <!-- duplicado para loop contínuo -->
+      <img class="marquee-img" src="assets/work-lancome.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-mixes1.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-mixes3.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-desktop-exp.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-mobile-exp.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-arf-mobile.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-dualipa.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-ysl.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-arf-realstate.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-dermaclub.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena1.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena2.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena3.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-serena6.jpg" alt="" aria-hidden="true" loading="lazy">
     </div>
   </div>
 </section>
