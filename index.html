@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Taynart — Sites que Convertem</title>
-  <meta name="description" content="Criamos landing pages e sites completos com foco em conversão e rankeamento orgânico. Planos a partir de R$ 799."/>
+  <meta name="description" content="Criamos landing pages e sites completos com foco em conversão e rankeamento orgânico. Planos a partir de R$ 500."/>
 
   <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png"/>
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png"/>
@@ -533,6 +533,8 @@ section{position:relative;z-index:2}
 .plan-currency{font-size:.8rem;font-weight:500;color:var(--fg-muted);margin-top:4px}
 .plan-val{font-family:var(--font-display);font-size:2.8rem;font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--fg)}
 .plan-card--featured .plan-val{color:var(--accent)}
+.plan-from{font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:6px}
+.plan-period{font-size:.85rem;font-weight:400;color:var(--fg-muted);align-self:flex-end;margin-bottom:6px}
 .plan-desc{font-size:.85rem;font-weight:300;line-height:1.7;color:var(--fg-muted)}
 .plan-divider{height:1px;background:var(--border)}
 .plan-features{display:flex;flex-direction:column;gap:var(--sp-4)}
@@ -546,6 +548,13 @@ section{position:relative;z-index:2}
   flex-shrink:0;margin-top:1px;
 }
 .plan-feature-check svg{color:var(--accent)}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIS SERVIÇOS
+   ═══════════════════════════════════════════════════════════ */
+#mais-servicos{padding:0 var(--sp-6) var(--sp-24)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-6);align-items:start;max-width:880px;margin:0 auto}
+@media(max-width:960px){.services-grid{grid-template-columns:1fr}}
 
 /* ═══════════════════════════════════════════════════════════
    FAQ
@@ -683,6 +692,7 @@ footer{
     <a href="#portfolio" class="nav-link">Portfólio</a>
     <a href="#sobre" class="nav-link">Sobre</a>
     <a href="#planos" class="nav-link">Planos</a>
+    <a href="#mais-servicos" class="nav-link">Mais serviços</a>
     <a href="#faq" class="nav-link">FAQ</a>
   </div>
   <button class="pf-btn pf-btn--solid" onclick="document.getElementById('planos').scrollIntoView({behavior:'smooth'})" aria-label="Ver planos">
@@ -1045,7 +1055,8 @@ footer{
       <div class="plan-card reveal">
         <div>
           <div class="plan-name">Starter</div>
-          <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">799</span></div>
+          <div class="plan-from">A partir de</div>
+          <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">500</span></div>
         </div>
         <p class="plan-desc">Para quem precisa de uma página que converte — clara, rápida e com foco total em fazer o visitante agir.</p>
         <div class="plan-divider"></div>
@@ -1067,13 +1078,15 @@ footer{
         <div class="plan-badge" aria-label="Mais indicado">Mais indicado</div>
         <div>
           <div class="plan-name">Essencial</div>
-          <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">1.199</span></div>
+          <div class="plan-from">A partir de</div>
+          <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">1.000</span></div>
         </div>
         <p class="plan-desc">Site completo com estratégia de SEO para quem quer ser encontrado no Google — e converter quem encontra.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features" role="list">
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Tudo do plano Starter</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Site completo (múltiplas páginas)</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Integrações essenciais: formulários, pixel de conversão, e-mail e calendário de agendamento</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Planejamento de SEO orgânico</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Otimização para rankeamento no Google</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Até 3 ajustes inclusos</li>
@@ -1089,12 +1102,15 @@ footer{
       <div class="plan-card reveal reveal-d3">
         <div>
           <div class="plan-name">Premium</div>
+          <div class="plan-from">A partir de</div>
           <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">2.000</span></div>
         </div>
         <p class="plan-desc">Para crescimento consistente: tudo do Essencial mais 2 meses de acompanhamento e evolução estratégica.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features" role="list">
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Tudo do plano Essencial</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Design totalmente personalizado</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Copy persuasiva e integrações complexas, com foco máximo em conversão</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Configuração e otimização do Google Meu Negócio</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Configuração de conta do Google Analytics</li>
           <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>2 meses de acompanhamento estratégico</li>
@@ -1112,8 +1128,68 @@ footer{
     </div>
     <p class="t-body reveal" style="text-align:center;margin-top:var(--sp-8)">
       Dúvidas sobre qual plano faz mais sentido?
-      <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" style="color:var(--accent);font-weight:400">Fala comigo antes de decidir →</a>
+      <a href="https://wa.me/5521998761604" target="_blank" rel="noopener" style="color:var(--accent);font-weight:400">Fala comigo antes de decidir →</a>
     </p>
+  </div>
+</section>
+
+
+<!-- MAIS SERVIÇOS ═════════════════════════════════════════ -->
+<section id="mais-servicos" aria-labelledby="mais-servicos-heading">
+  <div class="pf-rule"></div>
+  <div class="wrap">
+    <header class="sec-header sec-header--center">
+      <div class="t-eyebrow reveal" style="justify-content:center"><span class="pf-dot"></span>Mais serviços</div>
+      <h2 id="mais-servicos-heading" class="t-headline reveal reveal-d1">Além do site,<br>a <em>marca inteira.</em></h2>
+      <p class="t-body reveal reveal-d2">Identidade visual e design de produto para quem quer ir além da página.</p>
+    </header>
+    <div class="services-grid">
+
+      <!-- Identidade Visual / Branding -->
+      <div class="plan-card reveal">
+        <div>
+          <div class="plan-name">Identidade Visual · Estratégico</div>
+          <div class="plan-from">A partir de</div>
+          <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">1.500</span></div>
+        </div>
+        <p class="plan-desc">Marca estratégica e memorável — do conceito às aplicações, pronta para usar em qualquer lugar.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features" role="list">
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Logo em várias versões (principal, horizontal, vertical, monocromática e negativa)</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Paleta de cores e tipografia</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Arquivos vetoriais para impressão e digital</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Manual de marca</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Aplicações essenciais (cartão, assinatura de e-mail e redes sociais)</li>
+        </ul>
+        <a href="https://wa.me/5521998761604?text=Olá! Quero um orçamento de identidade visual." target="_blank" rel="noopener" class="pf-btn pf-btn--ghost" style="width:100%;min-width:0">
+          <span class="pf-ring"></span><span class="pf-veil"></span><span class="pf-core"></span>
+          <span class="pf-btn-lbl">Solicitar orçamento <span class="pf-arr">→</span></span>
+        </a>
+      </div>
+
+      <!-- UX/UI de Produto -->
+      <div class="plan-card reveal reveal-d2">
+        <div>
+          <div class="plan-name">UX/UI de Produto</div>
+          <div class="plan-from">A partir de</div>
+          <div class="plan-price"><span class="plan-currency">R$</span><span class="plan-val">75</span><span class="plan-period">/ hora</span></div>
+        </div>
+        <p class="plan-desc">Design de app, dashboard ou SaaS — interfaces intuitivas, orientadas a dados e prontas para escalar. Faixa de R$75 a R$130/h.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features" role="list">
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Design de app, dashboard e SaaS</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Pesquisa de usuário e wireframes</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Protótipos navegáveis</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Handoff pronto para desenvolvimento</li>
+          <li class="plan-feature" role="listitem"><span class="plan-feature-check" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Cobrança por hora, com estimativa fechada antes de começar</li>
+        </ul>
+        <a href="https://wa.me/5521998761604?text=Olá! Quero um orçamento de UX/UI de produto." target="_blank" rel="noopener" class="pf-btn pf-btn--ghost" style="width:100%;min-width:0">
+          <span class="pf-ring"></span><span class="pf-veil"></span><span class="pf-core"></span>
+          <span class="pf-btn-lbl">Solicitar orçamento <span class="pf-arr">→</span></span>
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1182,7 +1258,7 @@ footer{
         <h2 id="contato-heading" class="t-headline reveal reveal-d1" style="text-align:center;max-width:14ch">Seu site pode ser<br>seu melhor <em>vendedor.</em></h2>
         <p class="t-body reveal reveal-d2" style="text-align:center;max-width:42ch">Vamos conversar sobre o seu negócio, público e o que você precisa que o site faça por você. Sem compromisso.</p>
         <div class="cta-btns reveal reveal-d3">
-          <a href="https://wa.me/5551999999999?text=Olá! Quero saber mais sobre os planos de site." target="_blank" rel="noopener" class="pf-btn pf-btn--solid">
+          <a href="https://wa.me/5521998761604?text=Olá! Quero saber mais sobre os planos de site." target="_blank" rel="noopener" class="pf-btn pf-btn--solid">
             <span class="pf-ring"></span><span class="pf-veil"></span><span class="pf-core"></span>
             <span class="pf-btn-lbl">Falar pelo WhatsApp <span class="pf-arr">→</span></span>
           </a>
