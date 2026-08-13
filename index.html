@@ -481,23 +481,15 @@ section{position:relative;z-index:2}
 .marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
 .marquee-track{
   display:flex;align-items:center;gap:var(--sp-6);width:max-content;
-  animation:marquee-scroll 46s linear infinite;
+  will-change:transform;
 }
-.marquee:hover .marquee-track{animation-duration:160s}
 .marquee-img{
   height:260px;width:auto;display:block;flex-shrink:0;
   border:1px solid var(--border);background:#fff;
 }
-@keyframes marquee-scroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
 @media(max-width:780px){
   .marquee-img{height:170px}
   .marquee::before,.marquee::after{width:60px}
-}
-@media(prefers-reduced-motion:reduce){
-  .marquee-track{animation:none}
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1009,6 +1001,11 @@ footer{
       <img class="marquee-img" src="assets/work-serena2.jpg" alt="Site institucional de energia renovável" loading="lazy">
       <img class="marquee-img" src="assets/work-serena3.jpg" alt="Mockups mobile de site de energia renovável" loading="lazy">
       <img class="marquee-img" src="assets/work-serena6.jpg" alt="Páginas internas de site de energia renovável" loading="lazy">
+      <img class="marquee-img" src="assets/work-prada.jpg" alt="Landing page mobile da Prada Paradoxe" loading="lazy">
+      <img class="marquee-img" src="assets/work-pucrs.jpg" alt="Site institucional da PUC-Campinas" loading="lazy">
+      <img class="marquee-img" src="assets/work-puc.jpg" alt="Landing page de captação de leads da PUC-Campinas" loading="lazy">
+      <img class="marquee-img" src="assets/work-mercantil1.jpg" alt="Landing page do Banco Mercantil, saque-aniversário FGTS" loading="lazy">
+      <img class="marquee-img" src="assets/work-mercantil2.jpg" alt="Site do Banco Mercantil, campanha de saque-aniversário FGTS" loading="lazy">
       <!-- duplicado para loop contínuo -->
       <img class="marquee-img" src="assets/work-lancome.jpg" alt="" aria-hidden="true" loading="lazy">
       <img class="marquee-img" src="assets/work-mixes1.jpg" alt="" aria-hidden="true" loading="lazy">
@@ -1024,6 +1021,12 @@ footer{
       <img class="marquee-img" src="assets/work-serena2.jpg" alt="" aria-hidden="true" loading="lazy">
       <img class="marquee-img" src="assets/work-serena3.jpg" alt="" aria-hidden="true" loading="lazy">
       <img class="marquee-img" src="assets/work-serena6.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-prada.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-pucrs.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-puc.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-mercantil1.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img class="marquee-img" src="assets/work-mercantil2.jpg" alt="" aria-hidden="true" loading="lazy">
+
     </div>
   </div>
 </section>
@@ -1283,6 +1286,41 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* Carrossel "Outros trabalhos" — posição contínua em JS, nunca reseta ao passar o mouse */
+(function () {
+  var wrap = document.querySelector('.marquee');
+  var track = document.querySelector('.marquee-track');
+  if (!wrap || !track) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  var NORMAL_SPEED = 0.55;  // px por frame
+  var SLOW_SPEED = 0.08;
+  var targetSpeed = NORMAL_SPEED;
+  var currentSpeed = NORMAL_SPEED;
+  var pos = 0;
+  var half = 0;
+
+  function measure() { half = track.scrollWidth / 2; }
+  measure();
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+  if ('ResizeObserver' in window) { new ResizeObserver(measure).observe(track); }
+
+  wrap.addEventListener('mouseenter', function () { targetSpeed = SLOW_SPEED; });
+  wrap.addEventListener('mouseleave', function () { targetSpeed = NORMAL_SPEED; });
+
+  function tick() {
+    currentSpeed += (targetSpeed - currentSpeed) * 0.04;
+    pos -= currentSpeed;
+    if (half && pos <= -half) pos += half;
+    track.style.transform = 'translateX(' + pos + 'px)';
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
 
 /* FAQ */
 document.querySelectorAll('.faq-question').forEach(btn => {
